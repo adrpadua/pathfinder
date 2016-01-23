@@ -1,3 +1,11 @@
+//
+//  CSV.swift
+//  SwiftCSV
+//
+//  Created by naoty on 2014/06/09.
+//  Copyright (c) 2014年 Naoto Kaneko. All rights reserved.
+//
+
 import Foundation
 
 public class CSV {
@@ -6,8 +14,11 @@ public class CSV {
     public var columns = Dictionary<String, [String]>()
     var delimiter = NSCharacterSet(charactersInString: ",")
     
-    public init(content: String?, delimiter: NSCharacterSet, encoding: UInt) throws{
-        if let csvStringToParse = content{
+    public init?(contentsOfFile file: String, delimiter: NSCharacterSet, encoding: UInt, error: NSErrorPointer) {
+        let csvString : String
+        do {
+            csvString = try String(contentsOfFile: file);
+            let csvStringToParse = csvString
             self.delimiter = delimiter
             
             let newline = NSCharacterSet.newlineCharacterSet()
@@ -18,19 +29,21 @@ public class CSV {
             self.rows = self.parseRows(fromLines: lines)
             self.columns = self.parseColumns(fromLines: lines)
         }
+        catch {
+            csvString = ""
+        }
+        
     }
     
-    public convenience init(contentsOfURL url: String) throws {
+    public convenience init?(contentsOfFile file: String, error: NSErrorPointer) {
         let comma = NSCharacterSet(charactersInString: ",")
-        let csvString: String?
-        do {
-            csvString = try String(contentsOfFile: url, encoding: NSUTF8StringEncoding)
-        } catch _ {
-            csvString = nil
-        };
-        try self.init(content: csvString,delimiter:comma, encoding:NSUTF8StringEncoding)
+        self.init(contentsOfFile: file, delimiter: comma, encoding: NSUTF8StringEncoding, error: error)
     }
     
+    public convenience init?(contentsOfURL file: String, encoding: UInt, error: NSErrorPointer) {
+        let comma = NSCharacterSet(charactersInString: ",")
+        self.init(contentsOfFile: file, delimiter: comma, encoding: encoding, error: error)
+    }
     
     func parseHeaders(fromLines lines: [String]) -> [String] {
         return lines[0].componentsSeparatedByCharactersInSet(self.delimiter)

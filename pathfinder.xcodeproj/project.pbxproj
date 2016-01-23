@@ -15,8 +15,8 @@
 		A0A40A371C49F4C400400CD2 /* BigWhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A40A361C49F4C400400CD2 /* BigWhiteButton.swift */; };
 		A0A40A3A1C49F91600400CD2 /* PathfinderFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0A40A381C49F5E300400CD2 /* PathfinderFont.ttf */; };
 		A0A40A3E1C4A049900400CD2 /* ClassSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A40A3D1C4A049900400CD2 /* ClassSelectVC.swift */; };
-		A0BC7C211C53486F00EDC247 /* ClassSelect.csv in Resources */ = {isa = PBXBuildFile; fileRef = A0BC7C201C53486F00EDC247 /* ClassSelect.csv */; };
-		A0BC7C231C5352C800EDC247 /* ClassSelect.txt in Resources */ = {isa = PBXBuildFile; fileRef = A0BC7C221C5352C800EDC247 /* ClassSelect.txt */; };
+		A0BC7C2F1C535EC200EDC247 /* ClassSelect.tsv in Resources */ = {isa = PBXBuildFile; fileRef = A0BC7C2E1C535EC200EDC247 /* ClassSelect.tsv */; };
+		A0BC7C311C535F1E00EDC247 /* ClassSelect.csv in Resources */ = {isa = PBXBuildFile; fileRef = A0BC7C301C535F1E00EDC247 /* ClassSelect.csv */; };
 		A0EAEBF11C51409A00E37E6C /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EAEBF01C51409A00E37E6C /* ClassCell.swift */; };
 		A0EAEBF31C51411D00E37E6C /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EAEBF21C51411D00E37E6C /* Class.swift */; };
 		A0EAEBF61C5144AE00E37E6C /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EAEBF51C5144AE00E37E6C /* CSV.swift */; };
@@ -33,8 +33,8 @@
 		A0A40A361C49F4C400400CD2 /* BigWhiteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigWhiteButton.swift; sourceTree = "<group>"; };
 		A0A40A381C49F5E300400CD2 /* PathfinderFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PathfinderFont.ttf; sourceTree = "<group>"; };
 		A0A40A3D1C4A049900400CD2 /* ClassSelectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassSelectVC.swift; sourceTree = "<group>"; };
-		A0BC7C201C53486F00EDC247 /* ClassSelect.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClassSelect.csv; sourceTree = "<group>"; };
-		A0BC7C221C5352C800EDC247 /* ClassSelect.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClassSelect.txt; sourceTree = "<group>"; };
+		A0BC7C2E1C535EC200EDC247 /* ClassSelect.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClassSelect.tsv; sourceTree = "<group>"; };
+		A0BC7C301C535F1E00EDC247 /* ClassSelect.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClassSelect.csv; sourceTree = "<group>"; };
 		A0EAEBF01C51409A00E37E6C /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
 		A0EAEBF21C51411D00E37E6C /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		A0EAEBF51C5144AE00E37E6C /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 		A0A40A391C49F5E900400CD2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A0BC7C201C53486F00EDC247 /* ClassSelect.csv */,
-				A0BC7C221C5352C800EDC247 /* ClassSelect.txt */,
+				A0BC7C301C535F1E00EDC247 /* ClassSelect.csv */,
+				A0BC7C2E1C535EC200EDC247 /* ClassSelect.tsv */,
 				A0A40A381C49F5E300400CD2 /* PathfinderFont.ttf */,
 			);
 			name = Resources;
@@ -186,11 +186,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BC7C2F1C535EC200EDC247 /* ClassSelect.tsv in Resources */,
 				A0A40A3A1C49F91600400CD2 /* PathfinderFont.ttf in Resources */,
 				A0A40A2A1C49F3E100400CD2 /* LaunchScreen.storyboard in Resources */,
+				A0BC7C311C535F1E00EDC247 /* ClassSelect.csv in Resources */,
 				A0A40A271C49F3E100400CD2 /* Assets.xcassets in Resources */,
-				A0BC7C231C5352C800EDC247 /* ClassSelect.txt in Resources */,
-				A0BC7C211C53486F00EDC247 /* ClassSelect.csv in Resources */,
 				A0A40A251C49F3E100400CD2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
