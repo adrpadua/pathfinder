@@ -11,6 +11,7 @@ import UIKit
 class ClassSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     var classes = [Class]()
     
@@ -22,7 +23,6 @@ class ClassSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             let newClass = classes[indexPath.row]
             
             cell.configureCell(newClass)
-            print(newClass.desc)
             
             return cell
             
@@ -78,7 +78,6 @@ class ClassSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 let classDesc = row["description"]!
                 let cellClass = Class(name: className, desc: classDesc, set: classSet)
                 classes.append(cellClass)
-                print(classDesc)
             }
 
         }
