@@ -53,7 +53,6 @@ class ClassSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         tableView.backgroundColor = UIColor.clearColor()
         
         parseClassCSV()
-        print(classes.count)
     }
     
     
@@ -65,12 +64,13 @@ class ClassSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     func parseClassCSV() {
-        let path = NSBundle.mainBundle().pathForResource("ClassSelect", ofType: "csv")!
         
-        do {
-            let csv = try CSV(contentsOfURL: path)
-            let rows = csv.rows
-            print(rows.count)
+        let fileLocation = NSBundle.mainBundle().pathForResource("ClassSelect", ofType: "tsv")!
+        let tab = NSCharacterSet(charactersInString: "\t")
+        let error: NSErrorPointer = nil
+        if let tsv = CSV(contentsOfFile: fileLocation, delimiter: tab, encoding: NSUTF8StringEncoding, error: error) {
+            
+            let rows = tsv.rows
             
             for row in rows {
                 let className = row["id"]!
@@ -78,11 +78,30 @@ class ClassSelectVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 let classDesc = row["description"]!
                 let cellClass = Class(name: className, desc: classDesc, set: classSet)
                 classes.append(cellClass)
+                print(classDesc)
             }
-            
-        } catch let err as NSError {
-            print(err.debugDescription)
+
         }
+        
+        
+//        let path = NSBundle.mainBundle().pathForResource("ClassSelect", ofType: "csv")!
+//        
+//        do {
+//            let csv = try CSV(contentsOfURL: path)
+//            let rows = csv.rows
+//            print(rows.count)
+//            
+//            for row in rows {
+//                let className = row["id"]!
+//                let classSet = row["set"]!
+//                let classDesc = row["description"]!
+//                let cellClass = Class(name: className, desc: classDesc, set: classSet)
+//                classes.append(cellClass)
+//            }
+//
+//        } catch let err as NSError {
+//            print(err.debugDescription)
+//        }
     }
 
 }
